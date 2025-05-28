@@ -29,7 +29,7 @@ class ProductController extends Controller
 
     public function show(Product $product)
     {
-        $product->load('type');
+        $product->load('type', 'sales', 'sales.partner');
         return view('products.show', compact('product'));
     }
 
@@ -50,4 +50,6 @@ class ProductController extends Controller
         //$product->delete();
         //return redirect()->route('products.index');
     }
+
+
 }

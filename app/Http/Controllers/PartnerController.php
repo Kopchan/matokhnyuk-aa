@@ -47,7 +47,7 @@ class PartnerController extends Controller
 
     public function show(Partner $partner)
     {
-        $partner->load('type');
+        $partner->load('type', 'sales', 'sales.product');
         return view('partners.show', compact('partner'));
     }
 
