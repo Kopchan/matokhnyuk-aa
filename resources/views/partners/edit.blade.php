@@ -2,7 +2,7 @@
 @section('title', "Изменение партнёра \"$partner->name\"")
 @section('back', route('partners.show', $partner))
 @section('content')
-    <form class="partner column gap6"
+    <form class="partner column gap6 block"
           action="{{ route('partners.update', $partner) }}"
           method="post"
           enctype="application/x-www-form-urlencoded">

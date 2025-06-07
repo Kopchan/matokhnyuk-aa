@@ -1,5 +1,4 @@
 @extends('layout')
-@section('title', 'Главная')
 @section('buttons')
 @endsection
 @section('content')

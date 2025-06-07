@@ -5,13 +5,18 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>@yield('title', 'Мастер пол')</title>
+    <title>
+        @yield('title', 'Мастер пол')
+        @hasSection('title')
+            • Мастер пол
+        @endif
+    </title>
     <link rel="icon" href="{{ asset('assets/logo/logo.ico') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 </head>
 <body>
 <header class="between header">
-    <a class="flex gap6 name" href="/">
+    <a class="flex gap6 name" href="{{ route('home') }}">
         <img src="{{ asset('assets/logo/logo.png') }}" alt="Лого" width="50" height="50">
         <h1>Мастер пол</h1>
     </a>

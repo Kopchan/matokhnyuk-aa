@@ -5,7 +5,8 @@
     <a class="btn" href="{{ route('partners.edit', $partner) }}">Изменить</a>
 @endsection
 @section('content')
-    <div class="partner column gap6">
+    <div class="partner column gap6 block">
+        <h3 class="bottom12">Общая информация</h3>
         <div class="flex gap12">
             <div class="label-group">
                 <label>Тип</label>
@@ -44,25 +45,27 @@
             </p>
         </div>
     </div>
-    <h3 class="top-bottom">История реализации</h3>
-    @if (count($partner->sales))
-        <table>
-            <tr>
-                <th>ИД</th>
-                <th>Продукт</th>
-                <th>Кол-во</th>
-                <th>Дата</th>
-            </tr>
-            @foreach($partner->sales as $sale)
+    <div class="block">
+        <h3 class="bottom12">История реализации</h3>
+        @if (count($partner->sales))
+            <table>
                 <tr>
-                    <td>#{{ str_pad($sale->id, 3, '0', STR_PAD_LEFT) }}</td>
-                    <td>{{ $sale->product->name }}</td>
-                    <td>{{ $sale->quantity }}</td>
-                    <td>{{ date_format(new DateTime($sale->date), 'd.m.Y') }}</td>
+                    <th>ИД</th>
+                    <th>Продукт</th>
+                    <th>Кол-во</th>
+                    <th>Дата</th>
                 </tr>
-            @endforeach
-        </table>
-    @else
-        <p>С этим партнёром ещё не было реализовано продукции</p>
-    @endif
+                @foreach($partner->sales as $sale)
+                    <tr>
+                        <td>#{{ str_pad($sale->id, 3, '0', STR_PAD_LEFT) }}</td>
+                        <td>{{ $sale->product->name }}</td>
+                        <td>{{ $sale->quantity }}</td>
+                        <td>{{ date_format(new DateTime($sale->date), 'd.m.Y') }}</td>
+                    </tr>
+                @endforeach
+            </table>
+        @else
+            <p>С этим партнёром ещё не было реализовано продукции</p>
+        @endif
+    </div>
 @endsection

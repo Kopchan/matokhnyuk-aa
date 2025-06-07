@@ -2,7 +2,7 @@
 @section('title', "Создание продукта")
 @section('back', route('products.index'))
 @section('content')
-    <form class="product column gap6"
+    <form class="product column gap6 block"
           action="{{ route('products.store') }}"
           method="post"
           enctype="application/x-www-form-urlencoded">

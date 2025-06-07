@@ -2,7 +2,7 @@
 @section('title', "Изменение продукта \"$product->name\"")
 @section('back', route('products.show', $product))
 @section('content')
-    <form class="product column gap6"
+    <form class="product column gap6 block"
           action="{{ route('products.update', $product) }}"
           method="post"
           enctype="application/x-www-form-urlencoded">

@@ -1,9 +1,9 @@
 @font-face {
     font-family: 'Segoe UI';
-    src: url('./fonts/SegoeUIVF.ttf');
+    src: url('../fonts/Candara.ttf');
 }
 :root {
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Candara', sans-serif;
     --accent:      #67BA80;
     --accent-tint1: #518763;
     --accent-tint2: #395945;
@@ -19,13 +19,22 @@
 }
 
 .head {
-    margin: 25px  auto 10px;
-    max-width: 630px;
+    margin: 25px auto 10px;
+    max-width: 600px;
     padding: 0 0;
+}
+.header .name img {
+    height: 100%;
+    width: auto;
 }
 main {
     margin: 0 auto;
     max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.block {
     background: var(--bg-main);
     border-radius: 12px;
     border: #0002 solid 1px;
@@ -155,7 +164,10 @@ form button[type=submit] {
 table td {
     padding:  2px 6px ;
 }
-.top-bottom {
-    padding-top: 24px;
+.top-bottom12 {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+.bottom12 {
     padding-bottom: 12px;
 }

@@ -2,7 +2,7 @@
 @section('title', "Создание партнёра")
 @section('back', route('partners.index'))
 @section('content')
-    <form class="partner column gap6"
+    <form class="partner column gap6 block"
           action="{{ route('partners.store') }}"
           method="post"
           enctype="application/x-www-form-urlencoded">
